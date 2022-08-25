@@ -1,0 +1,17 @@
+Options -Multiviews
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+#LimitRequestBody 0
+#php_value upload_max_filesize 64M
+#php_value post_max_size 64M
+
+#RewriteCond %{SERVER_PORT} 80
+#RewriteCond %{REQUEST_URI} DepilControl
+#RewriteRule ^(.*)$ http://localhost:8080/DepilControl/$1 [R,L]
